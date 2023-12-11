@@ -14,7 +14,7 @@ const User = () => {
 	}, [navigate]);
 
 	return (
-		<div className="flex justify-end items-end h-screen pb-[150px] mr-[200px]">
+		<div className="flex justify-end items-end h-screen pb-[150px] pr-[200px] bg-zinc-700">
 			<Login />
 		</div>
 	);

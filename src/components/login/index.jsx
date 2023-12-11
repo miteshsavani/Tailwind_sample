@@ -75,7 +75,7 @@ const Login = () => {
 	return (
 		<div className="w-[500px]">
 			<div>
-				<h1 className="text-lime-900 text-8xl text-end">BONEYARD</h1>
+				<h1 className="text-lime-700 text-8xl text-end">BONEYARD</h1>
 			</div>
 
 			<div className="flex flex-col">
@@ -91,7 +91,7 @@ const Login = () => {
 				</div>
 				<div className="w-[300px]">
 					<InputWithLabel
-						labelClass="ml-4"
+						labelClass="ml-4 my-1"
 						label="Username:"
 						id="username"
 						onChange={onUserNameChange}
@@ -100,7 +100,7 @@ const Login = () => {
 						ref={userNameInputRef}
 					/>
 					<InputWithLabel
-						labelClass="ml-4"
+						labelClass="ml-4 my-1"
 						label="Password:"
 						id="password"
 						type="password"
