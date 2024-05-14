@@ -10,8 +10,8 @@ const TodoData = () => {
 	return loading ? (
 		<div className="justify-center items-center">Loading</div>
 	) : (
-		<table className="w-[50%] text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-			<thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+		<table className="w-[auto] text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 h-[100%] block relative overflow-auto">
+			<thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 sticky top-0">
 				<tr>
 					<th scope="col" className="px-6 py-3">
 						id

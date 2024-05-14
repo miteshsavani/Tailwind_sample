@@ -1,6 +1,7 @@
 import { app } from '../firebase-config';
 import Routers from './routes';
 
+
 function App() {
 	return <Routers />;
 }

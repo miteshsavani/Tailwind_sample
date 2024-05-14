@@ -1,12 +1,9 @@
-import { useCallback } from 'react';
-import { useState } from 'react';
+import { useCallback, useRef, useEffect, useState } from 'react';
 import Button from '../../blocks/button';
 import InputWithLabel from '../../blocks/input-with-label';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import { useRef } from 'react';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { AUTH_TOKEN } from '../../constants';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 	const [userDetails, setUserDetails] = useState({
@@ -16,7 +13,6 @@ const Login = () => {
 
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
-
 	const navigate = useNavigate();
 
 	const userNameInputRef = useRef();
@@ -59,10 +55,12 @@ const Login = () => {
 
 		signInWithEmailAndPassword(authentication, username, password)
 			.then((response) => {
-				
 				console.log('AuthToken', response._tokenResponse.refreshToken);
-				sessionStorage.setItem(AUTH_TOKEN, response._tokenResponse.refreshToken);
-				navigate('/home', { replace: true});
+				sessionStorage.setItem(
+					AUTH_TOKEN,
+					response._tokenResponse.refreshToken
+				);
+				navigate('/dashboard', { replace: true });
 			})
 			.catch(() => {
 				setError(true);
