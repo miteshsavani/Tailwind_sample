@@ -1,17 +1,23 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Home from '../screens/home'
-import User from '../screens/user'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Dashboard from '../screens/dashboard';
+import Header from '../components/header';
+import { Fragment } from 'react';
 
-
-const Routers = () =>{
-    return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<User/>}></Route>
-                <Route path="/home" element={<Home/>}></Route>
-            </Routes>
-        </Router>
-    )
-}
+const Routers = () => {
+	return (
+		<Fragment>
+			<Router>
+				<div className="flex flex-col h-[100vh]">
+					<Header />
+					<div className="flex-1 overflow-auto">
+						<Routes>
+							<Route path="/" element={<Dashboard />}></Route>
+						</Routes>
+					</div>
+				</div>
+			</Router>
+		</Fragment>
+	);
+};
 
 export default Routers;
